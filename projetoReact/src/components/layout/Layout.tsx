@@ -42,7 +42,7 @@ export default function Layout() {
       </aside>
 
       <div className="flex-1 flex flex-col ml-64">
-        <header className="bg-gradient-to-r from-amber-600 to-amber-700 shadow-lg px-8 py-4 flex items-center justify-between">
+        <header className="bg-gradient-to-r sticky top-0  from-amber-600 to-amber-700 shadow-lg px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="text-3xl text-white font-semibold">Sistema de Gerenciamento</span>
           </div>
