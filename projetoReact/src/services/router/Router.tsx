@@ -11,6 +11,11 @@ import ConsultarServico from "../../views/servico/Consultar";
 import CriarServico from "../../views/servico/Criar";
 import ExcluirServico from "../../views/servico/Excluir";
 import ListarServico from "../../views/servico/Listar";
+import AlterarQuarto from "../../views/quarto/Alterar";
+import ConsultarQuarto from "../../views/quarto/Consultar";
+import CriarQuarto from "../../views/quarto/Criar";
+import ExcluirQuarto from "../../views/quarto/Excluir";
+import ListarQuarto from "../../views/quarto/Listar";
 import { ROTA } from "./url";
 
 //localhost:3000/sistema/cidade/listar
@@ -64,6 +69,27 @@ export const routes: RouteObject[] = [
       {
         path: `${ROTA.SERVICO.POR_ID}/:servicoId`,
         element: <ConsultarServico />,
+      },
+      // Rotas para Quarto
+      {
+        path: ROTA.QUARTO.LISTAR,
+        element: <ListarQuarto />,
+      },
+      {
+        path: ROTA.QUARTO.CRIAR,
+        element: <CriarQuarto />,
+      },
+      {
+        path: `${ROTA.QUARTO.ATUALIZAR}/:quartoId`,
+        element: <AlterarQuarto />,
+      },
+      {
+        path: `${ROTA.QUARTO.EXCLUIR}/:quartoId`,
+        element: <ExcluirQuarto />,
+      },
+      {
+        path: `${ROTA.QUARTO.POR_ID}/:quartoId`,
+        element: <ConsultarQuarto />,
       },
     ],
   },

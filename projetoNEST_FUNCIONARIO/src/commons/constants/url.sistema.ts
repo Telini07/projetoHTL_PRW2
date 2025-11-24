@@ -1,5 +1,6 @@
 import { FUNCIONARIO } from './constants.sistema';
 import { SERVICO } from './constants.sistema';
+import { QUARTO } from './constants.sistema';
 
 export const SERVIDOR = 'http://localhost:8000';
 export const CLINTE = 'http://localhost:3000';
@@ -28,6 +29,7 @@ function gerarRotasSistema(entity: string) {
 export const ROUTE = {
   FUNCIONARIO: gerarRotasSistema(FUNCIONARIO),
   SERVICO: gerarRotasSistema(SERVICO),
+  QUARTO: gerarRotasSistema(QUARTO),
 };
 
 //criar rotas de forma dinâmica para os endpoints

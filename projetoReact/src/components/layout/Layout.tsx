@@ -9,7 +9,7 @@ export default function Layout() {
       <aside className="flex flex-col w-64 h-screen bg-gradient-to-b from-amber-900 to-amber-800 border-r border-amber-700 shadow-xl py-8 px-6 fixed left-0 top-0">
         <nav className="flex flex-col gap-2 h-full">
           <div className="mb-12 pb-6 border-b border-amber-700">
-            <h1 className="text-2xl font-bold text-white">
+            <h1 className="text-3xl font-bold text-white">
                Hotel
             </h1>
             <p className="text-amber-100 text-xs mt-1">Gerenciamento</p>

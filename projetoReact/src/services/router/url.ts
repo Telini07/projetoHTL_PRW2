@@ -1,4 +1,5 @@
 import { FUNCIONARIO } from "../funcionario/constants/funcionario.constants";
+import { QUARTO } from "../quarto/constants/quarto.constants";
 import { SERVICO } from "../servico/constants/servico.constants";
 
 const ROTA_SISTEMA = "sistema";
@@ -24,4 +25,5 @@ function gerarRotaSistema(entity: string) {
 export const ROTA = {
   FUNCIONARIO: gerarRotaSistema(FUNCIONARIO.ALIAS),
   SERVICO: gerarRotaSistema(SERVICO.ALIAS),
+  QUARTO: gerarRotaSistema(QUARTO.ALIAS),
 };

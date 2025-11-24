@@ -3,6 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import * as Joi from 'joi';
 import { FuncionarioModule } from 'src/funcionario/funcionario.module';
+import { QuartoModule } from 'src/quarto/quarto.module';
 import { ServicoModule } from 'src/servico/servico.module';
 
 const oracledb = require('oracledb');
@@ -44,6 +45,7 @@ oracledb.initOracleClient({
     }),
     FuncionarioModule,
     ServicoModule,
+    QuartoModule,
   ],
 })
 export class AppModule {}
