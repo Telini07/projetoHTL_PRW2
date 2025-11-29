@@ -13,7 +13,8 @@ export class HospedeServiceFindOne{
 
   async findOne(id:number){
     return await this.hospedeRepository.findOne({
-      where: { hospedeId: id }
+      where: { hospedeId: id },
+      relations: ['criadoPor'],
     });
   }
 }

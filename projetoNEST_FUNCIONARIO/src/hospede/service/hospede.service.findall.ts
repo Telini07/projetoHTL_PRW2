@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, InternalServerErrorException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { Hospede } from "../entity/hospede.entity";
@@ -12,6 +12,13 @@ export class HospedeServiceFindAll{
   ){}
 
   async findAll(){
-    return await this.hospedeRepository.find();
+    try{
+      return await this.hospedeRepository.find({ relations: ['criadoPor'] });
+    }catch(error){
+      // Log error for debugging (stack will be included by the global exception filter)
+      // and rethrow a NestJS exception so the filter can format it properly
+      console.error('Erro ao listar hóspedes:', error);
+      throw new InternalServerErrorException('Erro ao listar hóspedes', { cause: error });
+    }
   }
 }

@@ -7,4 +7,5 @@ export class HospedeRequest {
   dataNascimento: Date = new Date();
   email: string = '';
   telefone: string = '';
+  criadoPorId?: number;
 }

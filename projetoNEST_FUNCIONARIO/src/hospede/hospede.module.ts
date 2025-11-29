@@ -11,6 +11,7 @@ import { HospedeServiceFindAll } from './service/hospede.service.findall';
 import { HospedeServiceFindOne } from './service/hospede.service.findone';
 import { HospedeServiceRemove } from './service/hospede.service.remove';
 import { Hospede } from './entity/hospede.entity';
+import { Funcionario } from '../funcionario/entity/funcionario.entity';
 
 const hospedeControllers = [
     HospedeControllerFindAll,
@@ -29,7 +30,7 @@ const hospedeServices=[
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Hospede]),
+    TypeOrmModule.forFeature([Hospede, Funcionario]),
   ],
   controllers: [
     ...hospedeControllers,

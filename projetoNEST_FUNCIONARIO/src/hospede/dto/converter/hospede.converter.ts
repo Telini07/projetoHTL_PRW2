@@ -1,4 +1,5 @@
 import { Hospede } from "src/hospede/entity/hospede.entity";
+import { Funcionario } from 'src/funcionario/entity/funcionario.entity';
 import { HospedeRequest } from "../request/hospede.request";
 import { HospedeResponse } from "../response/hospede.response";
 
@@ -16,6 +17,9 @@ export class ConverterHospede{
     hospede.dataNascimento = hospedeRequest.dataNascimento;
     hospede.email = hospedeRequest.email;
     hospede.telefone = hospedeRequest.telefone;
+    if(hospedeRequest.criadoPorId != null){
+      hospede.criadoPor = new Funcionario({ funcionarioId: hospedeRequest.criadoPorId });
+    }
     return hospede;
   }
 
@@ -31,6 +35,8 @@ export class ConverterHospede{
     hospedeResponse.telefone = hospede.telefone;
     hospedeResponse.criadoEm = hospede.criadoEm;
     hospedeResponse.atualizadoEm = hospede.atualizadoEm;
+    hospedeResponse.criadoPorId = hospede.criadoPor?.funcionarioId;
+    hospedeResponse.criadoPorNome = hospede.criadoPor?.nome;
     return hospedeResponse;
   }
 }

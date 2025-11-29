@@ -9,4 +9,6 @@ export class HospedeResponse {
   telefone: string = '';
   criadoEm?: Date;
   atualizadoEm?: Date;
+  criadoPorId?: number;
+  criadoPorNome?: string;
 }

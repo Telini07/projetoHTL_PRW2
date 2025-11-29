@@ -31,6 +31,9 @@ export class HttpExceptionFilter implements ExceptionFilter {
       erro = String(exception);
     }
 
+    // Log the error to the console for easier debugging
+    console.error(`HTTP Error - status ${status}:`, exception);
+
     return sendHttpResponse(res, status, message, null, req.path, erro);
   }
 }

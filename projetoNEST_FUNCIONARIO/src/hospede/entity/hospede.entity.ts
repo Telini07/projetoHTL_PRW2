@@ -1,5 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn, ManyToOne, JoinColumn } from 'typeorm';
 import { BaseEntity } from '../../commons/entity/base.entity';
+import { Funcionario } from '../../funcionario/entity/funcionario.entity';
 
 @Entity('HTL_HOSPEDE')
 export class Hospede extends BaseEntity {
@@ -8,6 +9,10 @@ export class Hospede extends BaseEntity {
     type: 'number',
   })
   hospedeId?: number;
+
+  @ManyToOne(() => Funcionario, { nullable: true })
+  @JoinColumn({ name: 'CRIADO_POR' })
+  criadoPor?: Funcionario;
 
   @Column({
     name: 'NOME',
@@ -40,7 +45,7 @@ export class Hospede extends BaseEntity {
   sexo: string = '';
 
   @Column({
-    name: 'DATA_NASCIMENTO',
+    name: 'NASCIMENTO',
     type: 'date',
   })
   dataNascimento: Date = new Date();

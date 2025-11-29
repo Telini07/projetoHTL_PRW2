@@ -20,8 +20,9 @@ const buscarTodosHospedes = async (): Promise<Hospede[] | null> => {
     ) {
       return (payload as { dados: Hospede[] }).dados;
     }
-  } catch (error) {
-    console.log("Erro ao buscar hóspedes:", error);
+  } catch (error: any) {
+    // Print server response payload so we can see backend message and stack
+    console.log("Erro ao buscar hóspedes:", error?.response?.data ?? error);
   }
   return null;
 };
