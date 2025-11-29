@@ -1,4 +1,4 @@
-import { FUNCIONARIO } from './constants.sistema';
+import { FUNCIONARIO, HOSPEDE } from './constants.sistema';
 import { SERVICO } from './constants.sistema';
 import { QUARTO } from './constants.sistema';
 
@@ -30,6 +30,7 @@ export const ROUTE = {
   FUNCIONARIO: gerarRotasSistema(FUNCIONARIO),
   SERVICO: gerarRotasSistema(SERVICO),
   QUARTO: gerarRotasSistema(QUARTO),
+  HOSPEDE: gerarRotasSistema(HOSPEDE),
 };
 
 //criar rotas de forma dinâmica para os endpoints

@@ -16,6 +16,11 @@ import ConsultarQuarto from "../../views/quarto/Consultar";
 import CriarQuarto from "../../views/quarto/Criar";
 import ExcluirQuarto from "../../views/quarto/Excluir";
 import ListarQuarto from "../../views/quarto/Listar";
+import AlterarHospede from "../../views/hospede/Alterar";
+import ConsultarHospede from "../../views/hospede/Consultar";
+import CriarHospede from "../../views/hospede/Criar";
+import ExcluirHospede from "../../views/hospede/Excluir";
+import ListarHospede from "../../views/hospede/Listar";
 import { ROTA } from "./url";
 
 //localhost:3000/sistema/cidade/listar
@@ -90,6 +95,27 @@ export const routes: RouteObject[] = [
       {
         path: `${ROTA.QUARTO.POR_ID}/:quartoId`,
         element: <ConsultarQuarto />,
+      },
+      // Rotas para Hospede
+      {
+        path: ROTA.HOSPEDE.LISTAR,
+        element: <ListarHospede />,
+      },
+      {
+        path: ROTA.HOSPEDE.CRIAR,
+        element: <CriarHospede />,
+      },
+      {
+        path: `${ROTA.HOSPEDE.ATUALIZAR}/:id`,
+        element: <AlterarHospede />,
+      },
+      {
+        path: `${ROTA.HOSPEDE.EXCLUIR}/:id`,
+        element: <ExcluirHospede />,
+      },
+      {
+        path: `${ROTA.HOSPEDE.POR_ID}/:id`,
+        element: <ConsultarHospede />,
       },
     ],
   },

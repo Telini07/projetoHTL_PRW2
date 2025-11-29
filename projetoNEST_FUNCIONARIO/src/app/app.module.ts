@@ -3,13 +3,15 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import * as Joi from 'joi';
 import { FuncionarioModule } from 'src/funcionario/funcionario.module';
+import { HospedeModule } from 'src/hospede/hospede.module';
 import { QuartoModule } from 'src/quarto/quarto.module';
 import { ServicoModule } from 'src/servico/servico.module';
 
 const oracledb = require('oracledb');
 
 oracledb.initOracleClient({
-  libDir: 'C://oracle//instantclient_23_9',
+  // libDir: 'C://oracle//instantclient_23_9',
+  libDir: 'E://tel//oracle//instantclient',
 });
 
 @Module({
@@ -46,6 +48,7 @@ oracledb.initOracleClient({
     FuncionarioModule,
     ServicoModule,
     QuartoModule,
+    HospedeModule,
   ],
 })
 export class AppModule {}

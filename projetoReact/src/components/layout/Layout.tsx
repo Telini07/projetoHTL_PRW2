@@ -36,6 +36,20 @@ export default function Layout() {
             <span className="text-lg">Serviços</span>
             
           </Link>
+          <Link
+            to="/sistema/quarto/listar"
+            className="flex items-center gap-3 text-amber-50 hover:bg-amber-700 rounded-lg px-4 py-3 transition duration-200 font-medium"
+          >
+            <span className="text-lg">Quartos</span>
+            
+          </Link>
+          <Link
+            to="/sistema/hospede/listar"
+            className="flex items-center gap-3 text-amber-50 hover:bg-amber-700 rounded-lg px-4 py-3 transition duration-200 font-medium"
+          >
+            <span className="text-lg">Hóspedes</span>
+            
+          </Link>
 
           <div className="flex-1"></div>
         </nav>
