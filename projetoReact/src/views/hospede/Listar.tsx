@@ -59,7 +59,7 @@ export default function ListarHospede() {
                   <th className="px-6 py-4 text-left font-semibold">{HOSPEDE.LABEL.NOME}</th>
                   <th className="px-6 py-4 text-left font-semibold">{HOSPEDE.LABEL.EMAIL}</th>
                   <th className="px-6 py-4 text-left font-semibold">{HOSPEDE.LABEL.TELEFONE}</th>
-                  <th className="px-6 py-4 text-left font-semibold">{HOSPEDE.LABEL.DOCUMENTO}</th>
+                  <th className="px-6 py-4 text-left font-semibold">{HOSPEDE.LABEL.CPF}</th>
                   <th className="px-6 py-4 text-center font-semibold" colSpan={3}>Ações</th>
                 </tr>
               </thead>
@@ -73,7 +73,7 @@ export default function ListarHospede() {
                       <td className="px-6 py-4 text-gray-700">{model.nome}</td>
                       <td className="px-6 py-4 text-gray-700">{model.email}</td>
                       <td className="px-6 py-4 text-gray-700">{model.telefone}</td>
-                      <td className="px-6 py-4 text-gray-700">{model.documento}</td>
+                      <td className="px-6 py-4 text-gray-700">{model.cpf}</td>
                       <td className="px-6 py-4">
                         <div className="flex gap-2 justify-center flex-wrap">
                           <Link

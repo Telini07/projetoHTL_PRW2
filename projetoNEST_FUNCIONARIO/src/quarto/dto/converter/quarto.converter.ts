@@ -7,8 +7,9 @@ export class ConverterQuarto{
   static toQuarto(quartoRequest: QuartoRequest){
     const quarto = new Quarto();
 
-    if(quartoRequest.quartoId != null){ //se o id não estiver vazio
-      quarto.quartoId = quartoRequest.quartoId;
+    // Only set quartoId when it's a positive number (avoid setting empty string or zero)
+    if (quartoRequest.quartoId != null && Number(quartoRequest.quartoId) > 0) {
+      quarto.quartoId = Number(quartoRequest.quartoId);
     }
     quarto.identificador = quartoRequest.identificador;
     quarto.tipo = quartoRequest.tipo;

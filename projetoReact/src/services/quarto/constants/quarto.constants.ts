@@ -8,7 +8,7 @@ export const QUARTO = {
   ALIAS: "quarto",
 
   DADOS_INCIAIS: {
-    quartoId: "",
+    quartoId: undefined,
     identificador: "",
     tipo: "",
     valorDiaria: "",

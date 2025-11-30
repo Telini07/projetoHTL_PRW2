@@ -9,7 +9,7 @@ export const FUNCIONARIO = {
   ALIAS: "funcionario",
 
   DADOS_INCIAIS: {
-    funcionarioId: 0,
+    funcionarioId: undefined,
     nome: "",
     email: "",
     senha: "",

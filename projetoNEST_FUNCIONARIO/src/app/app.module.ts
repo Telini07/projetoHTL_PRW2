@@ -10,7 +10,6 @@ import { ServicoModule } from 'src/servico/servico.module';
 const oracledb = require('oracledb');
 
 oracledb.initOracleClient({
-  // libDir: 'E://tel//oracle//instantclient',
   libDir: 'C://oracle//instantclient_23_9',
 });
 

@@ -8,7 +8,8 @@ export class ConverterServico{
   static toServico(servicoRequest: ServicoRequest){
     const servico = new Servico();
 
-    if(servicoRequest.servicoId != null){ //se o id não estiver vazio
+    // Only set servicoId when it's a positive number (to avoid inserting into identity column)
+    if (servicoRequest.servicoId != null && servicoRequest.servicoId > 0) {
       servico.servicoId = servicoRequest.servicoId;
     }
     servico.nome = servicoRequest.nome;

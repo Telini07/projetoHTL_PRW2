@@ -8,7 +8,8 @@ export class ConverterFuncionario{
   static toFuncionario(funcionarioRequest: FuncionarioRequest){
     const funcionario = new Funcionario();
 
-    if(funcionarioRequest.funcionarioId != null){ //se o id não estiver vazio
+    // Only set id when it's a positive number (to avoid inserting id into DB identity column)
+    if (funcionarioRequest.funcionarioId != null && funcionarioRequest.funcionarioId > 0) {
       funcionario.funcionarioId = funcionarioRequest.funcionarioId;
     }
     funcionario.nome = funcionarioRequest.nome;

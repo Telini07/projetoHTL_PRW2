@@ -52,8 +52,20 @@ export default function ConsultarHospede() {
             <input id="telefone" defaultValue={hospede.telefone || ''} className={getInputClass()} readOnly disabled />
           </div>
           <div>
-            <label htmlFor="documento" className="block text-sm font-semibold text-amber-900 mb-2">Documento:</label>
-            <input id="documento" defaultValue={hospede.documento || ''} className={getInputClass()} readOnly disabled />
+            <label htmlFor="cpf" className="block text-sm font-semibold text-amber-900 mb-2">CPF:</label>
+            <input id="cpf" defaultValue={hospede.cpf || ''} className={getInputClass()} readOnly disabled />
+          </div>
+          <div>
+            <label htmlFor="sexo" className="block text-sm font-semibold text-amber-900 mb-2">Sexo:</label>
+            <input id="sexo" defaultValue={hospede.sexo || ''} className={getInputClass()} readOnly disabled />
+          </div>
+          <div>
+            <label htmlFor="nascimento" className="block text-sm font-semibold text-amber-900 mb-2">Nascimento:</label>
+            <input id="nascimento" defaultValue={(hospede.dataNascimento?.toString?.() ?? hospede.dataNascimento) || ''} className={getInputClass()} readOnly disabled />
+          </div>
+          <div>
+            <label htmlFor="criadoPorNome" className="block text-sm font-semibold text-amber-900 mb-2">Criado Por:</label>
+            <input id="criadoPorNome" defaultValue={hospede.criadoPorNome || ''} className={getInputClass()} readOnly disabled />
           </div>
           <div className="flex gap-4 mt-8 pt-4 border-t border-amber-100">
             <button id="cancel" type="button" className="w-full inline-flex items-center justify-center gap-2 bg-gray-300 text-gray-700 px-4 py-3 rounded-lg hover:bg-gray-400 transition font-semibold" title="Voltar" onClick={() => navigate(ROTA.HOSPEDE.LISTAR)}>

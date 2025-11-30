@@ -9,7 +9,7 @@ export const SERVICO = {
   ALIAS: "servico",
 
   DADOS_INCIAIS: {
-    servicoId: 0,
+    servicoId: undefined,
     nome: "",
     descricao: "",
     valor: 0,

@@ -7,17 +7,21 @@ export class ConverterHospede{
 
   static toHospede(hospedeRequest: HospedeRequest){
     const hospede = new Hospede();
-    if(hospedeRequest.hospedeId != null){
+    if (hospedeRequest.hospedeId != null && hospedeRequest.hospedeId > 0) {
       hospede.hospedeId = hospedeRequest.hospedeId;
     }
     hospede.nome = hospedeRequest.nome;
     hospede.cpf = hospedeRequest.cpf;
     hospede.rg = hospedeRequest.rg;
     hospede.sexo = hospedeRequest.sexo;
-    hospede.dataNascimento = hospedeRequest.dataNascimento;
+    if (hospedeRequest.dataNascimento != null) {
+      hospede.dataNascimento = typeof hospedeRequest.dataNascimento === 'string'
+        ? new Date(hospedeRequest.dataNascimento)
+        : hospedeRequest.dataNascimento;
+    }
     hospede.email = hospedeRequest.email;
     hospede.telefone = hospedeRequest.telefone;
-    if(hospedeRequest.criadoPorId != null){
+    if(hospedeRequest.criadoPorId != null && hospedeRequest.criadoPorId > 0){
       hospede.criadoPor = new Funcionario({ funcionarioId: hospedeRequest.criadoPorId });
     }
     return hospede;
